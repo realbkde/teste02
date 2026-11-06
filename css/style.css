@@ -1,4 +1,4 @@
-/* Paleta Iracema'S Beauty: castanho escuro, castanho profundo e champanhe. */
+/* Paleta Iracema's Beauty: castanho escuro, castanho profundo e champanhe. */
 :root{--page:#2A201B;--surface:#211A16;--surface-deep:#34271F;--ink:#F7F2EE;--brown:#6d4e39;--brown-dark:#4f3829;--champagne:#d3c1b3;--muted:#c2b2a7;--line:rgba(211,193,179,.2);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Montserrat',Arial,sans-serif}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
@@ -24,6 +24,7 @@ button{color:inherit;cursor:pointer}
 .hero-shade{background:linear-gradient(90deg,rgba(45,28,18,.78),rgba(45,28,18,.35) 56%,rgba(45,28,18,.1)),linear-gradient(0deg,rgba(45,28,18,.34),transparent 55%)}
 .hero-content{position:relative;width:min(690px,82%);margin-left:clamp(24px,11vw,160px);padding:56px 0;animation:rise-in .65s ease both}
 .eyebrow{margin:0 0 14px;color:var(--champagne);font-size:9px;font-weight:600;letter-spacing:.17em;text-transform:uppercase}
+.eyebrow .brand-name{text-transform:none}
 .hero .eyebrow{color:#f0ded0}
 .hero .eyebrow span{padding:0 7px;color:var(--champagne)}
 .hero h1,.brand-note h2{margin:0;font:500 clamp(56px,8vw,96px)/.91 var(--serif);letter-spacing:0}
@@ -49,6 +50,8 @@ button{color:inherit;cursor:pointer}
 .search-box input{width:160px;border:0;outline:0;background:transparent;color:var(--ink);font-size:10px}
 .sort-box select{height:38px;max-width:190px;padding:0 25px 0 10px;border:0;background:transparent;color:var(--muted);font-size:10px}
 .catalog-status{min-height:18px;margin:15px 0 0;color:var(--muted);font-size:10px}
+.catalog-whatsapp-link,.catalog-message a{display:inline-block;margin-left:8px;color:var(--champagne);text-decoration:underline;text-underline-offset:3px}
+.catalog-message{color:var(--muted);font-size:11px}
 .products-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:36px 18px;margin-top:12px}
 .product-card{min-width:0;animation:rise-in .35s ease both}
 .product-image{position:relative;aspect-ratio: .78;background:var(--surface-deep);overflow:hidden}
@@ -68,12 +71,23 @@ button{color:inherit;cursor:pointer}
 .brand-note h2{font-size:clamp(50px,7vw,78px);color:var(--ink)}
 .brand-note h2 em{color:var(--champagne)}
 .brand-note>p:not(.eyebrow){max-width:440px;margin:22px auto 22px;color:var(--muted);font-size:12px;line-height:1.9}
+.buying-info{max-width:1440px;margin:auto;padding:82px clamp(20px,7vw,104px);background:var(--surface)}
+.buying-info .section-heading{margin-bottom:26px}
+.buying-info-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.buying-info-grid article{padding:18px;background:var(--surface-deep);border:1px solid var(--line)}
+.buying-info-grid h3{margin:0 0 7px;color:var(--champagne);font:600 22px/1.1 var(--serif)}
+.buying-info-grid p{margin:0;color:var(--muted);font-size:10px;line-height:1.8}
 .text-link{color:var(--champagne);font-size:9px;font-weight:600;letter-spacing:.13em}
 .text-link span{margin-left:8px}
 .site-footer{min-height:120px;padding:28px clamp(20px,7vw,100px);display:flex;align-items:center;justify-content:space-between;gap:24px;background:var(--page)}
 .site-footer .brand strong{font-size:20px}
 .site-footer .brand small{font-size:7px}
 .site-footer p,.site-footer>span{color:var(--muted);font-size:9px}
+.footer-links{display:flex;flex-direction:column;gap:6px;font-size:10px}
+.footer-links a:hover{color:var(--champagne)}
+.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:6;width:54px;height:54px;padding:13px;display:grid;place-items:center;border:1px solid var(--champagne);border-radius:50%;background:#25D366;color:white;box-shadow:0 4px 16px rgba(0,0,0,.24)}
+.whatsapp-float:hover{background:var(--brown-dark)}
+.whatsapp-float svg{width:27px;height:27px;fill:currentColor}
 .drawer-backdrop,.modal-backdrop{position:fixed;inset:0;z-index:9;background:rgba(36,25,19,.42);opacity:0;visibility:hidden;transition:opacity .24s,visibility .24s}
 .drawer-backdrop.open,.modal-backdrop.open{opacity:1;visibility:visible}
 .cart-drawer{position:fixed;top:0;right:0;bottom:0;z-index:10;width:min(480px,100%);padding:25px clamp(18px,4vw,34px);display:flex;flex-direction:column;background:var(--surface);transform:translateX(102%);transition:transform .28s ease;overflow-y:auto}
@@ -123,7 +137,7 @@ button{color:inherit;cursor:pointer}
 .detail-copy{padding:22px 12px}
 .detail-copy h2{margin:0;font:500 48px/.98 var(--serif)}
 .detail-price{margin:12px 0;color:var(--champagne);font-size:15px;font-weight:600}
-.detail-description{color:var(--muted);font-size:11px;line-height:1.9}
+.detail-description{color:var(--muted);font-size:11px;line-height:1.9;white-space:pre-line}
 .detail-specs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .detail-specs span{display:block;color:var(--muted);font-size:9px}
 .detail-specs strong{font-size:10px;font-weight:600}
@@ -148,8 +162,8 @@ button{color:inherit;cursor:pointer}
 .toast{position:fixed;right:18px;bottom:18px;z-index:20;max-width:calc(100% - 36px);padding:12px 17px;background:var(--brown);color:white;font-size:11px;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s}
 .toast.show{opacity:1;transform:translateY(0)}
 @keyframes rise-in{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:900px){.products-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{height:590px}.collection{padding-top:78px;padding-bottom:86px}}
-@media(max-width:640px){.announcement{font-size:8px;letter-spacing:.1em}.site-header{height:68px;padding:0 18px}.brand strong{font-size:22px}.main-nav{gap:0}.main-nav a{display:none}.main-nav a:nth-child(2){display:block;font-size:9px}.cart-trigger{gap:7px}.hero{height:590px;min-height:540px;max-height:calc(100svh - 100px);align-items:end}.hero-image{object-position:58% center}.hero-shade{background:linear-gradient(0deg,rgba(45,28,18,.82),rgba(45,28,18,.16) 86%)}.hero-content{width:auto;margin:0;padding:0 22px 76px}.hero h1{font-size:clamp(53px,14vw,76px)}.hero-content>p:not(.eyebrow){max-width:310px;margin:18px 0 23px;font-size:12px}.hero-index{right:22px;bottom:24px}.collection{padding:66px 18px 76px}.section-heading{display:block;margin-bottom:23px}.section-heading h2{font-size:49px}.section-intro{margin-top:12px;font-size:11px}.catalog-tools{align-items:flex-start;flex-direction:column;gap:12px;padding:12px 0}.category-filters{width:100%;overflow-x:auto}.filter-button{flex:none;padding:8px}.catalog-controls{width:100%;justify-content:space-between}.search-box{flex:1}.search-box input{width:100%;min-width:0}.sort-box select{max-width:148px}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 11px;margin-top:4px}.product-image{aspect-ratio:.72}.product-info{padding-top:10px}.product-info h3{font-size:20px}.product-category{font-size:8px}.product-bottom{align-items:flex-start;flex-direction:column;gap:1px;margin-top:7px}.add-button{padding:6px 0}.quick-view{display:none}.reviews-section{padding:66px 18px 76px}.reviews-grid{grid-template-columns:1fr;gap:14px}.review-media{height:190px}.review-copy{padding:15px}.brand-note{padding:70px 22px}.brand-note h2{font-size:57px}.brand-note>p:not(.eyebrow){font-size:11px}.site-footer{padding:25px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.site-footer .brand{grid-row:span 2;align-self:center}.site-footer p{margin:0}.site-footer>span{text-align:right}.cart-drawer{padding:18px}.cart-line{grid-template-columns:64px 1fr auto;gap:10px}.cart-line>img{width:64px;height:82px}.product-modal{padding:48px 16px 16px}.product-detail{grid-template-columns:1fr;gap:10px}.detail-image{max-height:35vh;aspect-ratio:1.25}.detail-copy{padding:8px 2px}.detail-copy h2{font-size:40px}.detail-specs{margin:12px 0}}
+@media(max-width:900px){.products-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{height:590px}.collection{padding-top:78px;padding-bottom:86px}.buying-info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){.announcement{font-size:8px;letter-spacing:.1em}.site-header{height:68px;padding:0 18px}.brand strong{font-size:22px}.main-nav{gap:0}.main-nav a{display:none}.main-nav a:nth-child(2){display:block;font-size:9px}.cart-trigger{gap:7px}.hero{height:590px;min-height:540px;max-height:calc(100svh - 100px);align-items:end}.hero-image{object-position:58% center}.hero-shade{background:linear-gradient(0deg,rgba(45,28,18,.82),rgba(45,28,18,.16) 86%)}.hero-content{width:auto;margin:0;padding:0 22px 76px}.hero h1{font-size:clamp(53px,14vw,76px)}.hero-content>p:not(.eyebrow){max-width:310px;margin:18px 0 23px;font-size:12px}.hero-index{right:22px;bottom:24px}.collection{padding:66px 18px 76px}.section-heading{display:block;margin-bottom:23px}.section-heading h2{font-size:49px}.section-intro{margin-top:12px;font-size:11px}.catalog-tools{align-items:flex-start;flex-direction:column;gap:12px;padding:12px 0}.category-filters{width:100%;overflow-x:auto}.filter-button{flex:none;padding:8px}.catalog-controls{width:100%;justify-content:space-between}.search-box{flex:1}.search-box input{width:100%;min-width:0}.sort-box select{max-width:148px}.products-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 11px;margin-top:4px}.product-image{aspect-ratio:.72}.product-info{padding-top:10px}.product-info h3{font-size:20px}.product-category{font-size:8px}.product-bottom{align-items:flex-start;flex-direction:column;gap:1px;margin-top:7px}.add-button{padding:6px 0}.quick-view{display:none}.reviews-section{padding:66px 18px 76px}.reviews-grid{grid-template-columns:1fr;gap:14px}.review-media{height:190px}.review-copy{padding:15px}.brand-note{padding:70px 22px}.brand-note h2{font-size:57px}.brand-note>p:not(.eyebrow){font-size:11px}.site-footer{padding:25px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.site-footer .brand{grid-row:span 2;align-self:center}.site-footer p{margin:0}.site-footer>span{text-align:right}.footer-links{grid-column:1/-1}.buying-info{padding:66px 18px}.buying-info-grid{grid-template-columns:1fr;gap:10px}.whatsapp-float{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));min-height:44px;padding:0 13px}.cart-drawer{padding:18px}.cart-line{grid-template-columns:64px 1fr auto;gap:10px}.cart-line>img{width:64px;height:82px}.product-modal{padding:48px 16px 16px}.product-detail{grid-template-columns:1fr;gap:10px}.detail-image{max-height:35vh;aspect-ratio:1.25}.detail-copy{padding:8px 2px}.detail-copy h2{font-size:40px}.detail-specs{margin:12px 0}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 @media(max-width:640px){
@@ -163,4 +177,33 @@ button{color:inherit;cursor:pointer}
 	.detail-copy{padding:7px 2px}
 	.detail-copy h2{font-size:clamp(34px,10vw,42px)}
 	.detail-thumbnails{margin-top:7px}
+}
+
+@media(max-width:640px){
+	body{font-size:16px;line-height:1.65}
+	.brand small{font-size:10px}
+	.main-nav a,.main-nav a:nth-child(2){font-size:12px}
+	.cart-trigger{font-size:12px}
+	.cart-count{font-size:12px}
+	.hero-content>p:not(.eyebrow){font-size:15px;line-height:1.7}
+	.hero .eyebrow,.eyebrow{font-size:11px;line-height:1.5}
+	.button{font-size:11px}
+	.section-intro,.brand-note>p:not(.eyebrow){font-size:15px;line-height:1.7}
+	.filter-button,.search-box input,.sort-box select{font-size:14px}
+	.catalog-status,.catalog-message,.catalog-whatsapp-link{font-size:14px;line-height:1.6}
+	.product-category,.product-price{font-size:13px}
+	.product-badge{font-size:10px}
+	.buying-info-grid p{font-size:14px;line-height:1.7}
+	.footer-links,.site-footer p,.site-footer>span{font-size:12px}
+	.order-form label{font-size:14px}
+	.order-form .field-hint,.payment-note,.form-hint{font-size:12px;line-height:1.6}
+	.order-form input,.order-form textarea,.variant-fields select{font-size:16px}
+	.detail-description{font-size:14px;line-height:1.7}
+	.detail-specs span,.detail-specs strong,.variant-fields label,.variant-availability{font-size:13px}
+	.detail-price{font-size:17px}
+	.cart-line p,.line-price,.quantity-control button,.quantity-control span,.remove-button{font-size:12px}
+	.cart-empty,.toast{font-size:14px}
+	.reviews-empty,.review-product,.review-date{font-size:13px}
+	.whatsapp-float{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:56px;height:56px;padding:14px}
+	.whatsapp-float svg{width:28px;height:28px}
 }

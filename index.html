@@ -4,8 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f2ee">
-  <meta name="description" content="Iracema'S Beauty: perucas e extensões escolhidas para realçar a tua beleza.">
-  <title>Iracema'S Beauty | Perucas com identidade</title>
+  <meta name="description" content="Iracema's Beauty: perucas e extensões escolhidas para realçar a tua beleza.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Iracema's Beauty | Perucas com identidade">
+  <meta property="og:description" content="Perucas escolhidas para acompanhar cada versão de ti. Descobre a coleção Iracema's Beauty.">
+  <meta property="og:image" content="img/hero-iracema.jpeg">
+  <meta property="og:image:alt" content="Mulher com cabelo longo, imagem da Iracema's Beauty">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Iracema's Beauty | Perucas com identidade">
+  <meta name="twitter:description" content="Perucas escolhidas para acompanhar cada versão de ti. Descobre a coleção Iracema's Beauty.">
+  <meta name="twitter:image" content="img/hero-iracema.jpeg">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <title>Iracema's Beauty | Perucas com identidade</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,7 +26,7 @@
 <body>
  
   <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Iracema'S Beauty, início"><strong>IRACEMA'S</strong><small>BEAUTY</small></a>
+    <a class="brand" href="#inicio" aria-label="Iracema's Beauty, início"><strong>Iracema's</strong><small>Beauty</small></a>
     <nav class="main-nav" aria-label="Navegação principal">
       <a href="#inicio">Início</a><a href="#colecao">Coleção</a><a href="#avaliacoes">Avaliações</a><a href="#sobre">A marca</a>
     </nav>
@@ -27,10 +37,10 @@
 
   <main>
     <section class="hero" id="inicio">
-      <img class="hero-image" src="img/WhatsApp Image 2026-11-06 at 01.19.24.jpeg" alt="Retrato de mulher com cabelo longo e natural">
+      <img class="hero-image" src="img/hero-iracema.jpeg" alt="Mulher com cabelo longo e natural, imagem da Iracema's Beauty">
       <div class="hero-shade"></div>
       <div class="hero-content">
-        <p class="eyebrow">IRACEMA'S BEAUTY <span>·</span> A TUA BELEZA, À TUA MANEIRA</p>
+        <p class="eyebrow"><span class="brand-name">Iracema's Beauty</span> <span>·</span> A tua beleza, à tua maneira</p>
         <h1>Transforma-te.<br><em>Sem Medo.</em></h1>
         <p>Perucas escolhidas para acompanhar cada versão de ti.</p>
         <a class="button button-light" href="#colecao">DESCOBRIR A COLEÇÃO <span aria-hidden="true">↗</span></a>
@@ -51,28 +61,56 @@
         </div>
       </div>
       <p class="catalog-status" id="catalog-status" role="status" aria-live="polite">A carregar a coleção…</p>
+      <noscript><p class="catalog-message">Para consultar a coleção, ativa o JavaScript ou fala connosco pelo <a href="https://wa.me/351900000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p></noscript>
       <div class="products-grid" id="products-grid"></div>
       <p class="empty-state" id="empty-state" hidden>Não encontrámos produtos. Experimenta outra pesquisa.</p>
     </section>
 
     <section class="reviews-section" id="avaliacoes">
       <div class="section-heading">
-        <div><p class="eyebrow">CLIENTES IRACEMA'S BEAUTY</p><h2>Elas receberam.<br><em>Elas contam.</em></h2></div>
+        <div><p class="eyebrow"><span class="brand-name">Iracema's Beauty</span> · clientes</p><h2>Elas receberam.<br><em>Elas contam.</em></h2></div>
         <p class="section-intro">Experiências reais de clientes com as suas encomendas.</p>
       </div>
       <div class="reviews-grid" id="reviews-grid"></div>
-      <p class="reviews-empty" id="reviews-empty">Ainda não há avaliações publicadas. Para as adicionar, edita <code>data/avaliacoes.json</code> com o cliente, produto, testemunho e ficheiros em <code>media</code> (tipo <code>imagem</code> ou <code>video</code> e respetivo caminho em <code>src</code>).</p>
+      <p class="reviews-empty" id="reviews-empty">Em breve, as primeiras avaliações das nossas clientes.</p>
+    </section>
+
+    <section class="buying-info" id="antes-de-encomendar">
+      <div class="section-heading">
+        <div><p class="eyebrow">INFORMAÇÃO ÚTIL</p><h2>Antes de <em>encomendar.</em></h2></div>
+        <p class="section-intro">Confirma estes detalhes e edita os campos assinalados antes de publicar a loja.</p>
+      </div>
+      <div class="buying-info-grid">
+        <article><h3>Entregas em Portugal</h3><p>[EDITAR: indicar zonas servidas, transportadora e custos de envio em Portugal.]</p></article>
+        <article><h3>Prazos</h3><p>[EDITAR: indicar o prazo de preparação e entrega. Confirma o prazo do produto antes de encomendar.]</p></article>
+        <article><h3>Trocas e devoluções</h3><p>[EDITAR: explicar como pedir uma troca ou devolução e os respetivos prazos, de acordo com a legislação aplicável.]</p></article>
+        <article><h3>Materiais</h3><p>A ficha de cada produto indica se é de cabelo natural/humano ou sintético. Se tiveres dúvidas, pergunta-nos antes de encomendar.</p></article>
+        <article><h3>Cuidados</h3><p>[EDITAR: acrescentar instruções de lavagem, secagem, penteado e conservação adequadas a cada tipo de cabelo.]</p></article>
+        <article><h3>Tamanho da touca</h3><p>Com uma fita flexível, mede a circunferência da cabeça junto à linha do cabelo, passando pela testa, acima das orelhas e pela nuca. Envia-nos a medida para confirmar o tamanho.</p></article>
+      </div>
     </section>
 
     <section class="brand-note" id="sobre">
-      <p class="eyebrow">O RITUAL IRACEMA'S BEAUTY</p>
+      <p class="eyebrow">A marca <span class="brand-name">Iracema's Beauty</span></p>
       <h2>Escolhida por ti.<br><em>Feita para ti.</em></h2>
-      <p>O pagamento e a entrega são combinados diretamente contigo pelo WhatsApp, sem contas nem complicações.</p>
+      <p>Na Iracema's Beauty, selecionamos perucas e extensões para que possas expressar o teu estilo com confiança. Ajudamos-te a escolher a peça certa e combinamos o pedido diretamente contigo pelo WhatsApp.</p>
       <a href="#colecao" class="text-link">VER A COLEÇÃO <span aria-hidden="true">→</span></a>
     </section>
   </main>
 
-  <footer class="site-footer"><a class="brand" href="#inicio"><strong>IRACEMA'S</strong><small>BEAUTY</small></a><p>Peças para a tua expressão mais autêntica.</p><span>© <span id="year"></span> IRACEMA'S BEAUTY</span></footer>
+  <footer class="site-footer">
+    <a class="brand" href="#inicio" aria-label="Iracema's Beauty, início"><strong>Iracema's</strong><small>Beauty</small></a>
+    <p>Peças para a tua expressão mais autêntica.</p>
+    <nav class="footer-links" aria-label="Contactos">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://wa.me/351900000000" target="_blank" rel="noopener noreferrer">WhatsApp: +351 900 000 000</a>
+    </nav>
+    <span>© <span id="year">2026</span> Iracema's Beauty</span>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/351900000000?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20Iracema%27s%20Beauty." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Iracema's Beauty pelo WhatsApp">
+    <svg aria-hidden="true" viewBox="0 0 32 32" focusable="false"><path d="M16 3.2A12.6 12.6 0 0 0 5.2 22.3L3.5 28.5l6.4-1.7A12.6 12.6 0 1 0 16 3.2Zm0 22.9c-2 0-3.9-.5-5.6-1.6l-.4-.2-3.8 1 1-3.7-.3-.4A10.2 10.2 0 1 1 16 26.1Zm5.6-7.6c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.6-.9-.8-1.6-1.8-1.8-2.1-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6-.1-.2-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.6s1.1 3 1.2 3.2c.2.2 2.2 3.4 5.3 4.7.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>
+  </a>
 
   <!-- Painel do carrinho e formulário do pedido. -->
   <div class="drawer-backdrop" id="drawer-backdrop" data-action="close-cart"></div>
@@ -86,13 +124,13 @@
         <h3>Dados para o pedido</h3>
         <label>Nome *<input name="name" autocomplete="name" required maxlength="100"></label>
         <label>Telefone *<input name="phone" type="tel" autocomplete="tel" required maxlength="30"></label>
-        <label>Data de aniversário (dia e mês) — opcional<input name="birthday" type="text" inputmode="numeric" placeholder="DD/MM" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])" maxlength="5" title="Usa o formato DD/MM, por exemplo 24/06."><small class="field-hint">Só pedimos o dia e o mês. Se preencheres, esta data será enviada com o pedido para podermos lembrar-nos do teu aniversário.</small></label>
+        <label>Data de aniversário (dia e mês) — opcional<input name="birthday" type="text" inputmode="numeric" placeholder="DD/MM" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])" maxlength="5" title="Usa o formato DD/MM, por exemplo 24/06."><small class="field-hint">Usamos esta data apenas para te lembrar do aniversário, se a indicares.</small></label>
         <label>Morada<input name="address" autocomplete="street-address" maxlength="160"></label>
         <label>Localidade<input name="locality" autocomplete="address-level2" maxlength="100"></label>
         <label>Observações<textarea name="notes" rows="2" maxlength="500"></textarea></label>
         <button class="button button-primary full-width" type="submit">ENVIAR PEDIDO POR WHATSAPP <span aria-hidden="true">↗</span></button>
       </form>
-      <p class="form-hint">* Campos obrigatórios. Não há pagamento online.</p>
+      <p class="form-hint">* Campos obrigatórios. Usamos os teus dados apenas para tratar o pedido e, se indicares a data, para te lembrar do aniversário. Não há pagamento online.</p>
     </div>
   </aside>
 

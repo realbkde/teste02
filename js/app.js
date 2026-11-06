@@ -33,6 +33,7 @@
   let products = [];
   let activeCategory = 'Todos';
   let toastTimer;
+  let catalogLoadError = false;
 
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
@@ -77,7 +78,7 @@
       const playable = className === 'detail-image';
       return `<video class="${className}" data-main-media src="${media.src}" ${playable ? 'controls' : 'muted'} playsinline preload="metadata" aria-label="Vídeo de ${escapeHtml(productName)}"></video>`;
     }
-    return `<img class="${className}" data-main-media src="${media.src}" alt="${escapeHtml(productName)}">`;
+    return `<img class="${className}" data-main-media src="${media.src}" alt="${escapeHtml(productName)}" loading="lazy" decoding="async">`;
   }
 
   function renderReviews(reviews) {
@@ -101,6 +102,7 @@
       </article>`;
     }).join('');
     elements.reviewsEmpty.hidden = entries.length > 0;
+    if (!entries.length) elements.reviewsEmpty.textContent = 'Em breve, as primeiras avaliações das nossas clientes.';
   }
 
   function showToast(message) {
@@ -140,7 +142,13 @@
       </article>`;
     }).join('');
     elements.empty.hidden = visible.length > 0;
-    elements.status.textContent = `${visible.length} ${visible.length === 1 ? 'peça disponível' : 'peças na coleção'}`;
+    if (catalogLoadError) {
+      const message = 'Não conseguimos carregar a coleção atual. Estamos a apresentar uma seleção alternativa; fala connosco para confirmar os produtos disponíveis.';
+      const href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Olá! Não consigo consultar a coleção da Iracema's Beauty. Podem ajudar-me?")}`;
+      elements.status.innerHTML = `${escapeHtml(message)} <a class="catalog-whatsapp-link" href="${href}" target="_blank" rel="noopener noreferrer">Falar connosco no WhatsApp ↗</a>`;
+    } else {
+      elements.status.textContent = `${visible.length} ${visible.length === 1 ? 'peça disponível' : 'peças na coleção'}`;
+    }
   }
 
   function cartItems() {
@@ -186,7 +194,7 @@
     ).join('')}</div>` : '';
     elements.detail.innerHTML = `<div class="product-detail">
       <div class="detail-gallery">${media[0] ? renderProductMedia(media[0], product.nome, 'detail-image') : ''}${gallery}</div>
-      <div class="detail-copy"><p class="eyebrow">${escapeHtml(product.categoria)} · IRACEMA'S BEAUTY</p><h2 id="detail-name">${escapeHtml(product.nome)}</h2>
+      <div class="detail-copy"><p class="eyebrow">${escapeHtml(product.categoria)} · <span class="brand-name">Iracema's Beauty</span></p><h2 id="detail-name">${escapeHtml(product.nome)}</h2>
         <p class="detail-price" aria-live="polite">${money.format(product.preco)}</p><p class="detail-description">${escapeHtml(product.descricao)}</p>
         <div class="detail-specs"><div><span>Tipo</span><strong>${escapeHtml(product.tipo)}</strong></div><div><span>Disponibilidade</span><strong>${variants.length ? 'Disponível' : 'Esgotado'}</strong></div></div>
         <div class="variant-fields">
@@ -256,7 +264,7 @@
     const subtotal = items.reduce((total, item) => total + item.preco * item.quantity, 0);
     const lines = items.map(item => `• ${item.nome} (${item.cor}, ${item.comprimento}) x${item.quantity} — ${money.format(item.preco * item.quantity)}`);
     const message = [
-      "Olá! Gostaria de fazer este pedido na Iracema'S Beauty:", '', ...lines, '',
+      "Olá! Gostaria de fazer este pedido na Iracema's Beauty:", '', ...lines, '',
       `Total: ${money.format(subtotal)}`, '', 'Dados para entrega:', `Nome: ${name}`, `Telefone: ${phone}`,
       birthday ? `Data de aniversário (dia/mês): ${birthday}` : '',
       form.get('address') ? `Morada: ${String(form.get('address')).trim()}` : '',
@@ -278,12 +286,11 @@
       if (!response.ok) throw new Error('Não foi possível carregar o catálogo.');
       products = await response.json();
       if (!Array.isArray(products)) throw new Error('Formato de catálogo inválido.');
+      catalogLoadError = false;
       elements.status.textContent = '';
     } catch {
+      catalogLoadError = true;
       products = fallbackProducts;
-      elements.status.textContent = location.protocol === 'file:'
-        ? 'Catálogo de recurso ativo. Em hosting, os produtos são carregados de data/produtos.json.'
-        : 'Não foi possível ler produtos.json; a coleção de recurso está a ser apresentada.';
     }
     products = products.filter(product => Number.isInteger(product.id) && typeof product.nome === 'string' && Number.isFinite(product.preco) && (Array.isArray(product.imagens) || Array.isArray(product.videos)));
     renderFilters();
@@ -295,7 +302,7 @@
       renderReviews(await response.json());
     } catch {
       elements.reviewsEmpty.hidden = false;
-      elements.reviewsEmpty.textContent = 'Não foi possível carregar as avaliações. Verifica data/avaliacoes.json.';
+      elements.reviewsEmpty.textContent = 'As avaliações não estão disponíveis neste momento. Volta a consultar em breve.';
     }
   }
 

@@ -4,7 +4,7 @@
     "nome": "Kinky Curly 3C”",
     "categoria": "Perucas",
     "preco": 283,
-    "descricao": "Para cabelos que se parecem e se sentem com os seus. Bordas habilmente ventiladas criam uma linha do cabelo texturizada e de aparência natural que imita o crescimento do cabelo real do couro cabeludo.* Textura: Kinky Curly 3C - bobinas macias e fofas que se parecem com o seu próprio cabelo *Linha do Cabelo: Bordas texturizadas ventiladas diretamente na renda para uma aparência fiel ao couro do cabelo Comprimento mostrado: 16 Densidade: 200% para cabelos cheios e volumosos: Quer menos volume? Use o código 150density na finalização da compra para personalizar seu visual Precisa de mais? Adicione facilmente pacotes na guia Pacotes *# Características da tampa: • Prenda elástico e pentes para um ajuste confortável e sem cola •Renda HD Premium para uma mistura perfeita com a sua pele •Nós pré-depenados e branqueados para um acabamento realista Qualidade do cabelo: Cabelo Virgem 100% Premium - duplamente desenhado e cutícula alinhada para maciez e durabilidade *Pronto para Usar: Chega preparado e estilizado para que você possa ir direto da caixa para a instalação em minutos. Cor: Natural 1B (Cor personalizada adiciona 6 dias úteis)Envios em: Aprox. 2-3 semanas",
+    "descricao": "Para cabelos que se parecem e se sentem como os seus. As bordas habilmente ventiladas criam uma linha do cabelo texturizada e natural, que imita o crescimento do cabelo no couro cabeludo.\n\nTextura: Kinky Curly 3C, com caracóis macios e fofos que se parecem com o seu próprio cabelo.\n\nLinha do cabelo: bordas texturizadas, ventiladas diretamente na renda, para um aspeto natural. Comprimento mostrado: 16 polegadas.\n\nDensidade: 200%, para cabelos cheios e volumosos. Queres menos volume? Usa o código 150density na finalização da compra para personalizar o teu visual. Precisas de mais? Podes adicionar pacotes na secção correspondente.\n\nCaracterísticas da touca: elástico e pentes para um ajuste confortável e sem cola; renda HD premium para uma mistura natural com a pele; nós pré-depenados e branqueados para um acabamento realista.\n\nQualidade do cabelo: cabelo virgem 100% premium, duplamente desenhado e com cutículas alinhadas para maior maciez e durabilidade.\n\nPronta a usar: chega preparada e estilizada para que possas passar da caixa à instalação em poucos minutos.\n\nCor: Natural 1B. As cores personalizadas acrescentam 6 dias úteis ao prazo.\n\nEnvio: aproximadamente 2 a 3 semanas.",
     "cor": "Natural 1B",
     "comprimento": "16 polegadas",
     "tipo": "cabelo natural",
@@ -12,12 +12,12 @@
     "videos": ["img/VID-20261029-WA0006.mp4"],
     "disponivel": true,
     "variantes": [
-      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 260, "disponivel": true},
+      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 260, "disponivel": false},
       {"cor": "Natural 1B", "comprimento": "16 polegadas", "preco": 283, "disponivel": true},
-      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 308, "disponivel": true},
-       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 376, "disponivel": true},
-        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 433, "disponivel": true},
-      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 466, "disponivel": true}
+      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 308, "disponivel": false},
+       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 376, "disponivel": false},
+        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 433, "disponivel": false},
+      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 466, "disponivel": false}
 
      
     ]
@@ -28,7 +28,7 @@
     "nome": "Peruka Natural 1B 16 Polegadas",
     "categoria": "Perucas",
     "preco": 283,
-    "descricao": "para cabelos cheios e volumosos: Quer menos volume? Use o código 150density na finalização da compra para personalizar seu visual Precisa de mais? Adicione facilmente pacotes na guia Pacotes *# Características da tampa: • Prenda elástico e pentes para um ajuste confortável e sem cola •Renda HD Premium para uma mistura perfeita com a sua pele •Nós pré-depenados e branqueados para um acabamento realista Qualidade do cabelo: Cabelo Virgem 100% Premium - duplamente desenhado e cutícula alinhada para maciez e durabilidade *Pronto para Usar: Chega preparado e estilizado para que você possa ir direto da caixa para a instalação em minutos. Cor: Natural 1B (Cor personalizada adiciona 6 dias úteis)Envios em: Aprox. 2-3 semanas",
+    "descricao": "Cabelo cheio e volumoso. Queres menos volume? Usa o código 150density na finalização da compra para personalizar o teu visual. Precisas de mais? Podes adicionar pacotes na secção correspondente.\n\nCaracterísticas da touca: elástico e pentes para um ajuste confortável e sem cola; renda HD premium para uma mistura natural com a pele; nós pré-depenados e branqueados para um acabamento realista.\n\nQualidade do cabelo: cabelo virgem 100% premium, duplamente desenhado e com cutículas alinhadas para maior maciez e durabilidade.\n\nPronta a usar: chega preparada e estilizada para que possas passar da caixa à instalação em poucos minutos.\n\nCor: Natural 1B. As cores personalizadas acrescentam 6 dias úteis ao prazo.\n\nEnvio: aproximadamente 2 a 3 semanas.",
     "cor": "Natural 1B",
     "comprimento": "16 polegadas",
     "tipo": "cabelo natural",

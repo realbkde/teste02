@@ -12,12 +12,12 @@
     "videos": ["img/VID-20261029-WA0006.mp4"],
     "disponivel": true,
     "variantes": [
-      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 260, "disponivel": false},
+      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 260, "disponivel": true},
       {"cor": "Natural 1B", "comprimento": "16 polegadas", "preco": 283, "disponivel": true},
-      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 308, "disponivel": false},
-       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 376, "disponivel": false},
-        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 433, "disponivel": false},
-      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 466, "disponivel": false}
+      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 308, "disponivel": true},
+       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 376, "disponivel": true},
+        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 433, "disponivel": true},
+      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 466, "disponivel": true}
 
      
     ]
@@ -36,12 +36,12 @@
     "videos": [""],
     "disponivel": true,
     "variantes": [
-      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 250, "disponivel": false},
+      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 250, "disponivel": true},
       {"cor": "Natural 1B", "comprimento": "16 polegadas", "preco": 263, "disponivel": true},
-      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 288, "disponivel": false},
-       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 299, "disponivel": false},
-        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 320, "disponivel": false},
-      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 363, "disponivel": false}
+      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 288, "disponivel": true},
+       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 299, "disponivel": true},
+        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 320, "disponivel": true},
+      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 363, "disponivel": true}
 
      
     ]

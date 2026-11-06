@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "nome": "Kinky Curly 3C”",
+    "categoria": "Perucas",
+    "preco": 283,
+    "descricao": "Para cabelos que se parecem e se sentem com os seus. Bordas habilmente ventiladas criam uma linha do cabelo texturizada e de aparência natural que imita o crescimento do cabelo real do couro cabeludo.* Textura: Kinky Curly 3C - bobinas macias e fofas que se parecem com o seu próprio cabelo *Linha do Cabelo: Bordas texturizadas ventiladas diretamente na renda para uma aparência fiel ao couro do cabelo Comprimento mostrado: 16 Densidade: 200% para cabelos cheios e volumosos: Quer menos volume? Use o código 150density na finalização da compra para personalizar seu visual Precisa de mais? Adicione facilmente pacotes na guia Pacotes *# Características da tampa: • Prenda elástico e pentes para um ajuste confortável e sem cola •Renda HD Premium para uma mistura perfeita com a sua pele •Nós pré-depenados e branqueados para um acabamento realista Qualidade do cabelo: Cabelo Virgem 100% Premium - duplamente desenhado e cutícula alinhada para maciez e durabilidade *Pronto para Usar: Chega preparado e estilizado para que você possa ir direto da caixa para a instalação em minutos. Cor: Natural 1B (Cor personalizada adiciona 6 dias úteis)Envios em: Aprox. 2-3 semanas",
+    "cor": "Natural 1B",
+    "comprimento": "16 polegadas",
+    "tipo": "cabelo natural",
+    "imagens": ["img/IMG-20261029-WA0002.jpg", "img/IMG-20261029-WA0004.jpg","img/IMG-20261029-WA0005.jpg"],
+    "videos": ["img/VID-20261029-WA0006.mp4"],
+    "disponivel": true,
+    "variantes": [
+      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 260, "disponivel": false},
+      {"cor": "Natural 1B", "comprimento": "16 polegadas", "preco": 283, "disponivel": true},
+      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 308, "disponivel": false},
+       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 376, "disponivel": false},
+        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 433, "disponivel": false},
+      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 466, "disponivel": false}
+
+     
+    ]
+  },
+
+  {
+    "id": 2,
+    "nome": "Peruka Natural 1B 16 Polegadas",
+    "categoria": "Perucas",
+    "preco": 283,
+    "descricao": "para cabelos cheios e volumosos: Quer menos volume? Use o código 150density na finalização da compra para personalizar seu visual Precisa de mais? Adicione facilmente pacotes na guia Pacotes *# Características da tampa: • Prenda elástico e pentes para um ajuste confortável e sem cola •Renda HD Premium para uma mistura perfeita com a sua pele •Nós pré-depenados e branqueados para um acabamento realista Qualidade do cabelo: Cabelo Virgem 100% Premium - duplamente desenhado e cutícula alinhada para maciez e durabilidade *Pronto para Usar: Chega preparado e estilizado para que você possa ir direto da caixa para a instalação em minutos. Cor: Natural 1B (Cor personalizada adiciona 6 dias úteis)Envios em: Aprox. 2-3 semanas",
+    "cor": "Natural 1B",
+    "comprimento": "16 polegadas",
+    "tipo": "cabelo natural",
+    "imagens": ["img/WhatsApp Image 2026-11-06 at 01.17.20 (2).jpeg","img/WhatsApp Image 2026-11-06 at 01.17.20.jpeg","img/WhatsApp Image 2026-11-06 at 01.17.20 (1).jpeg","img/WhatsApp Image 2026-11-06 at 01.17.20 (3).jpeg"],
+    "videos": [""],
+    "disponivel": true,
+    "variantes": [
+      {"cor": "Natural 1B", "comprimento": "14 polegadas", "preco": 250, "disponivel": false},
+      {"cor": "Natural 1B", "comprimento": "16 polegadas", "preco": 263, "disponivel": true},
+      {"cor": "Natural 1B", "comprimento": "18 polegadas", "preco": 288, "disponivel": false},
+       {"cor": "Natural 1B", "comprimento": "20 polegadas", "preco": 299, "disponivel": false},
+        {"cor": "Natural 1B", "comprimento": "22 polegadas", "preco": 320, "disponivel": false},
+      {"cor": "Natural 1B", "comprimento": "24 polegadas", "preco": 363, "disponivel": false}
+
+     
+    ]
+  }
+]

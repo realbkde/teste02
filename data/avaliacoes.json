@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "cliente": "Cliente",
+    "media": [
+      {
+        "tipo": "imagem",
+        "src": "img/avali/WhatsApp Image 2026-11-07 at 00.53.25.jpeg"
+      }
+    ]
+  },
+  {
+    "cliente": "Cliente",
+    "media": [
+      {
+        "tipo": "imagem",
+        "src": "img/avali/WhatsApp Image 2026-11-07 at 00.53.24.jpeg"
+      }
+    ]
+  },
+  {
+    "cliente": "Cliente",
+    "media": [
+      {
+        "tipo": "imagem",
+        "src": "img/avali/WhatsApp Image 2026-11-07 at 00.53.23 (2).jpeg"
+      }
+    ]
+  }
+]

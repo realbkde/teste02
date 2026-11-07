@@ -26,7 +26,11 @@
     detail: document.querySelector('#product-detail'),
     modal: document.querySelector('#product-modal'),
     modalBackdrop: document.querySelector('#product-backdrop'),
+    reviewViewer: document.querySelector('#review-viewer'),
+    reviewViewerBackdrop: document.querySelector('#review-viewer-backdrop'),
+    reviewViewerImage: document.querySelector('#review-viewer-image'),
     reviews: document.querySelector('#reviews-grid'),
+    reviewsMore: document.querySelector('#reviews-more'),
     reviewsEmpty: document.querySelector('#reviews-empty'),
     toast: document.querySelector('#toast')
   };
@@ -34,6 +38,8 @@
   let activeCategory = 'Todos';
   let toastTimer;
   let catalogLoadError = false;
+  const reviewsPageSize = 3;
+  let visibleReviews = reviewsPageSize;
 
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]);
@@ -83,18 +89,19 @@
 
   function renderReviews(reviews) {
     const entries = Array.isArray(reviews) ? reviews.filter(review => review && typeof review.cliente === 'string') : [];
-    elements.reviews.innerHTML = entries.map(review => {
+    visibleReviews = reviewsPageSize;
+    elements.reviews.innerHTML = entries.map((review, index) => {
       const media = Array.isArray(review.media) ? review.media : [];
       const mediaMarkup = media.map(item => {
         const src = safeImage(item.src);
         if (!src) return '';
         return item.tipo === 'video'
           ? `<video class="review-media" src="${src}" controls preload="metadata" aria-label="Vídeo da avaliação de ${escapeHtml(review.cliente)}"></video>`
-          : `<img class="review-media" src="${src}" alt="Fotografia partilhada por ${escapeHtml(review.cliente)}" loading="lazy">`;
+          : `<button class="review-media-trigger" type="button" data-review-image="${src}" data-review-alt="Fotografia partilhada por ${escapeHtml(review.cliente)}" aria-label="Ampliar fotografia da avaliação"><img class="review-media" src="${src}" alt="Fotografia partilhada por ${escapeHtml(review.cliente)}" loading="lazy" decoding="async"></button>`;
       }).join('');
-      return `<article class="review-card">
+      return `<article class="review-card" ${index >= visibleReviews ? 'hidden' : ''}>
         ${mediaMarkup ? `<div class="review-media-grid">${mediaMarkup}</div>` : ''}
-        <div class="review-copy"><p class="review-quote">“${escapeHtml(review.texto || '')}”</p>
+        <div class="review-copy">${review.texto ? `<p class="review-quote">“${escapeHtml(review.texto)}”</p>` : ''}
           <p class="review-customer">${escapeHtml(review.cliente)}</p>
           ${review.produto ? `<p class="review-product">${escapeHtml(review.produto)}</p>` : ''}
           ${review.data ? `<p class="review-date">${escapeHtml(review.data)}</p>` : ''}
@@ -102,7 +109,17 @@
       </article>`;
     }).join('');
     elements.reviewsEmpty.hidden = entries.length > 0;
+    elements.reviewsMore.dataset.total = String(entries.length);
+    elements.reviewsMore.hidden = entries.length <= visibleReviews;
     if (!entries.length) elements.reviewsEmpty.textContent = 'Em breve, as primeiras avaliações das nossas clientes.';
+  }
+
+  function showMoreReviews() {
+    visibleReviews += reviewsPageSize;
+    elements.reviews.querySelectorAll('.review-card[hidden]').forEach((card, index) => {
+      if (index < reviewsPageSize) card.hidden = false;
+    });
+    elements.reviewsMore.hidden = visibleReviews >= Number(elements.reviewsMore.dataset.total);
   }
 
   function showToast(message) {
@@ -233,6 +250,21 @@
     document.body.classList.toggle('locked', elements.drawer.classList.contains('open'));
   }
 
+  function setReviewViewer(open, source = '', alt = '') {
+    elements.reviewViewer.classList.toggle('open', open);
+    elements.reviewViewerBackdrop.classList.toggle('open', open);
+    elements.reviewViewer.setAttribute('aria-hidden', String(!open));
+    if (open) {
+      elements.reviewViewerImage.src = source;
+      elements.reviewViewerImage.alt = alt;
+      document.body.classList.add('locked');
+    } else {
+      elements.reviewViewerImage.removeAttribute('src');
+      elements.reviewViewerImage.alt = '';
+      document.body.classList.toggle('locked', elements.drawer.classList.contains('open') || elements.modal.classList.contains('open'));
+    }
+  }
+
   function sendOrder(event) {
     event.preventDefault();
     const items = cartItems();
@@ -307,8 +339,20 @@
   }
 
   document.addEventListener('click', event => {
-    const target = event.target.closest('[data-action],[data-category],[data-add],[data-view],[data-quantity],[data-remove],[data-gallery-media]');
+    const target = event.target.closest('[data-action],[data-category],[data-add],[data-view],[data-quantity],[data-remove],[data-gallery-media],[data-review-image]');
     if (!target) return;
+    if (target.dataset.reviewImage) {
+      setReviewViewer(true, target.dataset.reviewImage, target.dataset.reviewAlt || '');
+      return;
+    }
+    if (target.dataset.action === 'close-review-viewer') {
+      setReviewViewer(false);
+      return;
+    }
+    if (target.dataset.action === 'show-more-reviews') {
+      showMoreReviews();
+      return;
+    }
     if (target.dataset.galleryMedia !== undefined) {
       const product = products.find(item => item.id === Number(elements.detail.querySelector('[data-add]')?.dataset.add));
       const selectedMedia = product && productMedia(product)[Number(target.dataset.galleryMedia)];
@@ -369,6 +413,7 @@
     if (event.key === 'Escape') {
       setDrawer(false);
       closeProduct();
+      setReviewViewer(false);
     }
   });
   window.addEventListener('storage', event => {

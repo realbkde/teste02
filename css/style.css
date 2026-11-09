@@ -151,8 +151,8 @@ button{color:inherit;cursor:pointer}
 .reviews-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:22px}
 .review-card{min-width:0;overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:0 10px 28px rgba(0,0,0,.12)}
 .review-media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:2px;background:var(--surface-deep)}
-.review-media-trigger{position:relative;width:100%;aspect-ratio:1/1;padding:0;display:block;overflow:hidden;border:0;background:var(--surface-deep);cursor:zoom-in}
-.review-media{width:100%;height:100%;display:block;object-fit:contain;background:var(--surface-deep);transition:transform .3s ease}
+.review-media-trigger{position:relative;width:100%;height:auto;padding:0;display:block;overflow:hidden;border:0;background:var(--surface-deep);cursor:zoom-in}
+.review-media{width:100%;height:auto;display:block;object-fit:contain;background:var(--surface-deep);transition:transform .3s ease}
 .review-media-trigger:hover .review-media{transform:scale(1.025)}
 .review-media-trigger:focus-visible{outline:2px solid var(--champagne);outline-offset:-3px}
 .review-card[hidden]{display:none}
@@ -221,7 +221,8 @@ button{color:inherit;cursor:pointer}
 	.whatsapp-float{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:56px;height:56px;padding:14px}
 	.whatsapp-float svg{width:28px;height:28px}
 	.reviews-grid{grid-template-columns:1fr;gap:16px}
-	.review-media-trigger{aspect-ratio:1/1}
+	.review-media-trigger{height:auto}
+	.review-media{height:auto}
 	.review-viewer{width:calc(100% - 20px);height:calc(100dvh - 24px);padding:16px}
 	.review-viewer>p{font-size:13px}
 }

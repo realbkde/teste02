@@ -78,10 +78,9 @@
     return prices.length ? Math.min(...prices) : product.preco;
   }
 
-  function productLengths(product) {
-    const available = availableVariants(product);
-    const lengths = [...new Set((available.length ? available : productVariants(product)).map(variant => variant.comprimento).filter(Boolean))];
-    return lengths.length ? lengths.join(', ') : 'Comprimento sob consulta';
+  function productLength(product) {
+    const firstVariant = availableVariants(product)[0] || productVariants(product)[0];
+    return product.comprimento || firstVariant && firstVariant.comprimento || 'Comprimento sob consulta';
   }
 
   function isVideoSource(source) {
@@ -198,7 +197,7 @@
         </div>
         <div class="product-info">
           <h3>${escapeHtml(product.nome)}</h3>
-          <p class="product-meta">${type}${escapeHtml(materialName(product))} · ${escapeHtml(productLengths(product))} · ${escapeHtml(textureName(product))}</p>
+          <p class="product-meta">${type}${escapeHtml(materialName(product))} · ${escapeHtml(productLength(product))} · ${escapeHtml(textureName(product))}</p>
           <div class="product-bottom">
             <span class="product-price">${available.length > 1 ? 'Desde ' : ''}${currency.format(productStartingPrice(product))}</span>
             <button class="add-button" type="button" data-quick-add="${product.id}" ${firstVariant ? '' : 'disabled'} aria-label="Adicionar ${escapeHtml(product.nome)} ao carrinho">Adicionar ao carrinho</button>
@@ -273,7 +272,7 @@
         <div class="detail-specs">
           <div><span>Material</span><strong>${escapeHtml(materialName(product))}</strong></div>
           <div><span>Textura</span><strong>${escapeHtml(textureName(product))}</strong></div>
-          <div><span>Comprimento</span><strong>${escapeHtml(productLengths(product))}</strong></div>
+          <div><span>Comprimento</span><strong>${escapeHtml(productLength(product))}</strong></div>
           <div><span>Disponibilidade</span><strong>${available.length ? 'Disponível' : 'Esgotado'}</strong></div>
         </div>
         <div class="variant-fields">
@@ -568,6 +567,10 @@
   elements.orderForm.addEventListener('submit', sendOrder);
   elements.orderForm.addEventListener('input', event => {
     const name = event.target.name;
+    if (name === 'birthday') {
+      const digits = event.target.value.replace(/\D/g, '').slice(0, 4);
+      event.target.value = digits.length > 2 ? `${digits.slice(0, 2)}/${digits.slice(2)}` : digits;
+    }
     if (['name', 'phone', 'birthday'].includes(name)) setFieldError(name, '');
     if (!elements.orderForm.querySelector('.field-error:not(:empty)')) {
       elements.formError.hidden = true;

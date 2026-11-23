@@ -25,5 +25,33 @@
         "src": "img/avali/cliente-02.jpeg"
       }
     ]
+  },
+  {
+    "cliente": "Cliente",
+    "media": [
+      {
+        "tipo": "imagem",
+        "src": "img/WhatsApp Image 2026-11-23 at 07.22.42.jpeg"
+      }
+    ]
+  },
+  {
+    "cliente": "Cliente",
+    "media": [
+      {
+        "tipo": "imagem",
+        "src": "img/WhatsApp Image 2026-11-23 at 07.19.45.jpeg"
+      }
+    ]
+  },
+  {
+    "cliente": "Cliente",
+    "media": [
+      {
+        "tipo": "imagem",
+        "src": "img/WhatsApp Image 2026-11-14 at 23.50.28.jpeg"
+      }
+    ]
   }
+  
 ]
